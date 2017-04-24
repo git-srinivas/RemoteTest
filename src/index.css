@@ -523,7 +523,7 @@
     }
     .rcont .thumbs {
         position: absolute;
-        right: -1%;
+        right: -4%;
         width: 20%;
     }
     .thumbs .thumup {
@@ -591,13 +591,13 @@
     }
     /* Modal Content */
     .modal-content {
-            background-color: #fefefe;
-    margin: auto;
-    padding: 30px 20px;
-    border: 1px solid #888;
-    width: 60%;
-    position: relative;
-    top: 20%;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 30px 20px;
+        border: 1px solid #888;
+        width: 60%;
+        position: relative;
+        top: 20%;
     }
     .modal-content .mod-com {
         width: 100%;
