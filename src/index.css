@@ -99,7 +99,8 @@
     }
     .rcont div span.head {
         font-weight: bold;
-        font-size: 16px
+        font-size: 16px;
+        font-style: italic
     }
     .rcont .tag {
         padding-top: 4%;
@@ -459,7 +460,8 @@
     }
     .rcont div span.head {
         font-weight: bold;
-        font-size: 16px
+        font-size: 16px;
+        font-style: italic
     }
     .rcont .tag {
         padding-top: 1%
@@ -818,7 +820,8 @@
     }
     .rcont div span.head {
         font-weight: bold;
-        font-size: 16px
+        font-size: 16px;
+        font-style: italic
     }
     .rcont .tag {
         padding-top: 1%
