@@ -2,14 +2,14 @@
 my remote test
 
 #install gulp-cli if u dont have gulp installed
-npm install -g gulp-cli
+  npm install -g gulp-cli
 
 #run npm install for  node dependencies
-npm install
+  npm install
 
 #run bower install for bower dependencies
-bower install
+  bower install
 
 #run the app with gulp
-gulp serve
+  gulp serve
 
