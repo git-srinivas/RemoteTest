@@ -52,8 +52,9 @@
   			<span>{{comment.username}}</span>
   			<div class="texdiv "><p>{{comment.commenttxt}}</p> </div>
   			<div class="comedit ">
+  			<div  class="combtn " ng-click="$ctrl.delete(item,comment) " ng-class="$parent.$index %2 == 0 ? 'black' : 'white'"><span>DELETE</span></div>
   				<div class="combtn " ng-click="$ctrl.edit(item,comment) " ng-class="$parent.$index %2 == 0 ? 'black' : 'white'"><span >EDIT</span> </div>
-  				<div  class="combtn " ng-click="$ctrl.delete(item,comment) " ng-class="$parent.$index %2 == 0 ? 'black' : 'white'"><span>DELETE</span></div>
+  				
   			</div>
   		</div>
   		
