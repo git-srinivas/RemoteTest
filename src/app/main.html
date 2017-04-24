@@ -1,0 +1,68 @@
+<div class="main-container">
+    <test-header></test-header>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="mod-com">
+                <div class="add"><span>Add comment</span> <span class="close" ng-click="$ctrl.closeModal()"></span></div>
+                <form name="saveForm" accept-charset="utf-8" novalidate>
+                    <div class="text">
+                        <span>Your name*</span>
+                        <div>
+                            <input name="inp" type="text" minlength="3" ng-model="$ctrl.commentData.username" required>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <span ng-class="$ctrl.commentData.commenttxt.length > 500 ? 'col-red': 'col-gre'">Your comment*</span>
+                        <div class="area">
+                            <textarea name="" ng-keyup="$ctrl.do_resize(this);" cols="15" rows="1" ng-model="$ctrl.commentData.commenttxt" maxlength="600" ng-class="$ctrl.commentData.commenttxt.length > 500 ? 'col-red': 'col-gre'" required></textarea>
+                            <span ng-class="$ctrl.commentData.commenttxt.length > 500 ? 'col-red': 'col-gre'">{{$ctrl.commentData.commenttxt.length}} characters out of 500</span>
+                        </div>
+                    </div>
+                    <div class="combtn" ng-click="$ctrl.save(saveForm.$valid)" ng-class="(saveForm.$valid)? ($ctrl.commentData.commenttxt.length < 500?'green' : 'dis'):'dis'"><span class="save">SAVE</span> </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <main class="main">
+        <div class="trow" ng-repeat="item in $ctrl.data" ng-class="$index %2 == 0 ? 'bg-grey' : 'bg-red'">
+            <div class="lcont">
+            </div>
+            <div class="rcont">
+                <div><span class="head">{{item.name}}</span> </div>
+                <div class="texData">
+                    <div class="thumbs">
+                        <div class="thumup" ng-class="$index %2 == 0 ? 'gre' : 'red'" ng-click="$ctrl.voteUp(item)"></div>
+                        <div class="num"><span>{{item.likes}}</span></div>
+                        <div class="thumdo" ng-class="$index %2 == 0 ? 'gre' : 'red'" ng-click="$ctrl.voteDown(item)"></div>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+                    <p>
+                        Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio digniss
+                    </p>
+                </div>
+                <div class="tag"><span>#tag1</span> <span>#tag2</span> <span>#tag3</span></div>
+                <div class="combtn"  ng-class="$index %2 == 0 ? 'black' : 'white'" ng-click="$ctrl.comment(item)"><span>COMMENT</span> </div>
+                <div class="comments">
+                    <div class="comment" ng-repeat="comment in item.comments | orderBy:'$index':true">
+  			<span>{{comment.username}}</span>
+  			<div class="texdiv "><p>{{comment.commenttxt}}</p> </div>
+  			<div class="comedit ">
+  				<div class="combtn " ng-click="$ctrl.edit(item,comment) " ng-class="$parent.$index %2 == 0 ? 'black' : 'white'"><span >EDIT</span> </div>
+  				<div  class="combtn " ng-click="$ctrl.delete(item,comment) " ng-class="$parent.$index %2 == 0 ? 'black' : 'white'"><span>DELETE</span></div>
+  			</div>
+  		</div>
+  		
+  	</div>
+  </div>
+  </div>
+
+  </main>
+  <footer>
+  	<div class="flcont"></div><div class="frcont"><span>Copyright 2017</span></div>
+  </footer>
+
